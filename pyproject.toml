@@ -8,9 +8,14 @@ authors = ["kidcode <tmdgus5611@gmail.com>"]
 python = "^3.9"
 Django = "4.0"
 django-ninja = "0.16.1"
+black = "21.12b0"
 
 [tool.poetry.dev-dependencies]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+# []안을 섹션이라고 한다.
+[tool.black]
+line-length = 140
