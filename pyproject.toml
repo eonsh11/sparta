@@ -9,6 +9,8 @@ python = "^3.9"
 Django = "4.0"
 django-ninja = "0.16.1"
 black = "21.12b0"
+django-stubs = "1.9.0"
+mypy = "0.931"
 
 [tool.poetry.dev-dependencies]
 
@@ -19,3 +21,22 @@ build-backend = "poetry.core.masonry.api"
 # []안을 섹션이라고 한다.
 [tool.black]
 line-length = 140
+
+
+[tool.mypy]
+plugins = ["mypy_django_plugin.main"]
+python_version = 3.9
+strict = true
+
+# mypy 검사를 하지 않겠다.
+[[tool.mypy.overrides]]
+module = "*.migrations.*"
+ignore_errors = true
+
+# 수정할 일이 없기 때문에 검사를 하지 않음.
+[[tool.mypy.overrides]]
+module = "manage"
+ignore_errors = true
+
+[tool.django-stubs]
+django_settings_module = "sparta.settings"
