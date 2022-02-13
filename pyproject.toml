@@ -11,6 +11,7 @@ django-ninja = "0.16.1"
 black = "21.12b0"
 django-stubs = "1.9.0"
 mypy = "0.931"
+isort = "5.10.1"
 
 [tool.poetry.dev-dependencies]
 
@@ -40,3 +41,7 @@ ignore_errors = true
 
 [tool.django-stubs]
 django_settings_module = "sparta.settings"
+
+# isort 와 black이 서로 호환되도록 해 준다.
+[tool.isort]
+profile = "black"
