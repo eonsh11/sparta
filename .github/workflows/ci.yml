@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the codes
-      uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Setup python environment
-      id: setup-python
-      uses: actions/setup-python@v2
-      with:
-      python-version: 3.9.9
+        id: setup-python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9.9
 
       - name: Install Poetry
         run: |
